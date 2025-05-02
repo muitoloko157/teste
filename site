@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendas Extras para Mães Solteiras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Rendas Extras para Mães Solteiras</h1>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+    </nav>
+    <section id="home">
+        <h2>Bem-vinda à nossa loja!</h2>
+        <p>Descubra oportunidades incríveis de renda extra feitas especialmente para mães solteiras.</p>
+        <div class="product">
+            <h3>Ebook Renda para mães solteiras</h3>
+            <p>R$ 19,90</p>
+            <button onclick="window.location.href='https://pay.kirvano.com/76666652-146f-40c8-af9c-d6fb7edd3c40';">Ir para compra</button>
+        </div>
+    </section>
+    <section id="sobre">
+        <h2>Sobre</h2>
+        <p>Somos uma plataforma dedicada a ajudar mães solteiras a conquistarem independência financeira através de oportunidades de renda extra.</p>
+    </section>
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Email: contato@rendasmaes.com.br</p>
+        <p>WhatsApp: (15) 9999-9999</p>
+    </section>
+    <footer>
+        &copy; 2025 Rendas Extras para Mães Solteiras. Todos os direitos reservados.
+    </footer>
+    <script>
+        let cart = [];
+        function addToCart(product, price) {
+            cart.push({ product, price });
+            updateCart();
+        }
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            cartItems.innerHTML = '';
+            let total = 0;
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.product} - R$ ${item.price.toFixed(2)}`;
+                cartItems.appendChild(li);
+                total += item.price;
+            });
+            cartTotal.textContent = `Total: R$ ${total.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
